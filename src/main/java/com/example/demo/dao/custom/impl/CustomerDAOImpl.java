@@ -13,6 +13,8 @@ import java.util.List;
 public class CustomerDAOImpl implements CustomerDAO {
 
     public static String GET_CUSTOMER = "SELECT * FROM customers";
+
+    public static String DELETE_CUSTOMER = "DELETE FROM customer where contact=?";
     public static String SAVE_CUSTOMER = "INSERT INTO customers (id,name,address,salary) VALUES(?,?,?,?)";
     @Override
     public String saveCustomer(CustomerDTO customer, Connection connection) throws SQLException {
@@ -49,5 +51,11 @@ public class CustomerDAOImpl implements CustomerDAO {
         }catch (Exception e){
             throw new SQLException(e.getMessage());
         }
+    }
+    @Override
+    public boolean deleteCustomer(String id, Connection connection) throws SQLException {
+        var sc = connection.prepareStatement(DELETE_CUSTOMER);
+        sc.setString(1,id);
+        return sc.executeUpdate()!=0;
     }
 }

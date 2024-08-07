@@ -32,4 +32,7 @@ public class CustomerBOImpl implements CustomerBO {
         }
         return customerDTOS;
        }
+    public boolean deleteCustomer(String id, Connection connection) throws Exception{
+        return customerDAO.deleteCustomer(id,connection);
+    }
 }

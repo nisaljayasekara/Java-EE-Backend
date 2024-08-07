@@ -10,5 +10,6 @@ public interface CustomerBO extends SuperBO {
     String saveCustomer(CustomerDTO customer, Connection connection) throws Exception;
 
     List<CustomerDTO> getAllCustomer(Connection connection) throws Exception;
+    boolean deleteCustomer(String id, Connection connection) throws Exception;
 
 }
