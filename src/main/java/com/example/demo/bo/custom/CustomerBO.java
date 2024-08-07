@@ -4,8 +4,11 @@ import com.example.demo.bo.SuperBO;
 import com.example.demo.dto.CustomerDTO;
 
 import java.sql.Connection;
+import java.util.List;
 
 public interface CustomerBO extends SuperBO {
     String saveCustomer(CustomerDTO customer, Connection connection) throws Exception;
+
+    List<CustomerDTO> getAllCustomer(Connection connection) throws Exception;
 
 }

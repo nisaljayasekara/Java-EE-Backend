@@ -54,4 +54,17 @@ public class CustomerServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        try (var writer = resp.getWriter()){
+            Jsonb jsonb = JsonbBuilder.create();
+
+            resp.setContentType("application/json");
+            jsonb.toJson(customerBO.getAllCustomer(connection),writer);
+        }catch (Exception e) {
+            e.printStackTrace();
+         }
+        }
 }
