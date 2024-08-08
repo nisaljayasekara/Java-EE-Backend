@@ -7,6 +7,7 @@ import com.example.demo.dto.CustomerDTO;
 import com.example.demo.entity.Customer;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +35,8 @@ public class CustomerBOImpl implements CustomerBO {
        }
     public boolean deleteCustomer(String id, Connection connection) throws Exception{
         return customerDAO.deleteCustomer(id,connection);
+    }
+    public boolean updateCustomer(String customerContact, CustomerDTO customer, Connection connection) throws SQLException {
+        return customerDAO.updateCustomer(customerContact,customer,connection);
     }
 }
