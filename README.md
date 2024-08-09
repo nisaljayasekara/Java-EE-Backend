@@ -16,8 +16,9 @@ The back-end of Mobile Shop POS handles server-side operations, data processing,
 - **Reporting and Analytics:** Generates detailed reports and alerts on orders, products, and customer data for informed decision-making.
 - **JavaEE Architecture:** Developed with the Java Platform, Enterprise Edition, offering a scalable architecture for enterprise-level applications.
 
-#API Documentation
+# API Documentation
 https://documenter.getpostman.com/view/36789283/2sA3s3GAnA
+
 - **Apache Tomcat Server:** Configured to run on Apache Tomcat, ensuring efficient and reliable web application hosting.
 - **Data Processing:** Implements server-side logic to handle data processing and facilitate seamless communication between the front-end and database.
 - **Business Rules:** Enforces business logic and regulations specific to mobile phone shop operations.
