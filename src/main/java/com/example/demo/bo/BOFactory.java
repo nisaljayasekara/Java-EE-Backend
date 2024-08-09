@@ -2,6 +2,9 @@ package com.example.demo.bo;
 
 import com.example.demo.bo.custom.impl.CustomerBOImpl;
 import com.example.demo.bo.custom.impl.ItemBOImpl;
+import com.example.demo.bo.custom.impl.OrderBOImpl;
+import com.example.demo.bo.custom.impl.OrderDetailsBOImpl;
+import com.example.demo.dao.custom.impl.OrderDetailsDAOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -14,7 +17,10 @@ public class BOFactory {
 
     public enum BOTypes{
         CUSTOMER_BO,
-        ITEM_BO
+        ITEM_BO,
+
+        ORDER_BO,
+        ORDERDETAILS_BO
 
     }
 
@@ -24,6 +30,10 @@ public class BOFactory {
                 return (T) new CustomerBOImpl();
             case ITEM_BO:
                 return (T) new ItemBOImpl();
+            case ORDER_BO:
+                return (T) new OrderBOImpl();
+            case ORDERDETAILS_BO:
+                return (T) new OrderDetailsBOImpl();
             default:
                 return null;
         }

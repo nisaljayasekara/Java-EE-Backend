@@ -18,8 +18,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/customer",loadOnStartup = 2)
-
+@WebServlet(urlPatterns = "/customer")
 public class CustomerServlet extends HttpServlet {
 
     CustomerBO customerBO = BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CUSTOMER_BO);
@@ -37,12 +36,15 @@ public class CustomerServlet extends HttpServlet {
 
     }
 
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        System.out.println("hello");
         if(req.getContentType() == null || !req.getContentType().toLowerCase().startsWith("application/json")){
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
+
         try(var write = resp.getWriter()){
             Jsonb jsonb = JsonbBuilder.create();
             CustomerDTO customer = jsonb.fromJson(req.getReader(), CustomerDTO.class);

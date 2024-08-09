@@ -9,24 +9,24 @@
         <param-value>http://127.0.0.1:5502</param-value>
     </context-param>
 
-    <filter>
-        <filter-name>Security</filter-name>
-        <filter-class>com.example.demo.filter.Security</filter-class>
-    </filter>
+<!--    <filter>-->
+<!--        <filter-name>Security</filter-name>-->
+<!--        <filter-class>com.example.demo.filter.Security</filter-class>-->
+<!--    </filter>-->
 
-     <filter-mapping>
-         <filter-name>Security</filter-name>
-         <url-pattern>/*</url-pattern>
-     </filter-mapping>
+<!--     <filter-mapping>-->
+<!--         <filter-name>Security</filter-name>-->
+<!--         <url-pattern>/*</url-pattern>-->
+<!--     </filter-mapping>-->
 
-    <filter>
-        <filter-name>CORSFilter</filter-name>
-        <filter-class>com.example.demo.filter.CORSFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>CORSFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+<!--    <filter>-->
+<!--        <filter-name>CORSFilter</filter-name>-->
+<!--        <filter-class>com.example.demo.filter.CORSFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>CORSFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 
     <resource-ref>
         <description>DB Connection</description>
