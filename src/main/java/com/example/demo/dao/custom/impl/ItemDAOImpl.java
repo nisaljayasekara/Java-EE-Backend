@@ -75,4 +75,34 @@ public class ItemDAOImpl implements ItemDAO {
             throw new SQLException(e.getMessage());
         }
     }
+
+    @Override
+    public Item search(Connection connection, String code) throws SQLException {
+
+        String sql =  "SELECT * FROM item WHERE code = ?";
+        ResultSet resultSet = SQLUtil.execute(sql, connection,code);
+        if (resultSet.next()) {
+            return new Item(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getInt(4)
+            );
+        }
+    return null;
+
+    }
+
+    @Override
+    public boolean update(Connection connection, Item item) throws SQLException {
+        String sql = "UPDATE product SET pro_name=?, price=?, category=?, quantity=? WHERE pro_id=?";
+        return SQLUtil.execute(sql, connection,
+                item.getName(),
+                item.getPrice(),
+                item.getQuantity(),
+                item.getCode()
+                );
+    }
+
+
 }
